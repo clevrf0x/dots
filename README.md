@@ -12,6 +12,8 @@
 - lazygit
 - ripgrep
 - nvim
+- hyprland
+- wofi
 
 ### How to setup?
 
