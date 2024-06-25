@@ -1,0 +1,116 @@
+{
+    "layer": "top",
+    "position": "top",
+    "spacing": 2, // Gaps between modules (4px)
+    "margin-bottom":-5,
+    "modules-left": ["hyprland/workspaces", "hyprland/window" ],
+
+    "modules-right": ["cpu", "memory", "bluetooth", "network","pulseaudio" ,"backlight", "battery", "clock", "tray"],
+    "modules-center": [ "custom/spotify" ],
+
+    "custom/spotify": {
+        "exec": "/usr/bin/python3 .config/hypr/scripts/mediaplayer.py --player spotify",
+        "format": "{}  󰓇",
+        "return-type": "json",
+        "on-click": "playerctl play-pause",
+        "on-scroll-up": "playerctl volume 0.05-",
+        "on-scroll-down": "playerctl volume 0.05+",
+        "on-click-right": "playerctl next"
+    },
+
+    "custom/weather": {
+        "exec": "python ~/.config/hypr/scripts/weather.py",
+        "restart-interval": 300,
+        "return-type": "json",
+        "on-click": "xdg-open https://weather.com/en-IN/weather/today/l/2ede99e19c87195a7c9a28300a2948b4d60377d34350deacf2b2ee6f909eed5b"
+    },
+
+    "hyprland/window": {
+        "max-length": 100,
+        "separate-outputs": true
+    },
+
+    "hyprland/workspaces": { 
+        "format": "{icon}",
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "{icon}",
+    },
+
+    "bluetooth": {
+        "format-connected": "<span foreground='#d79921' size='11500' rise='-1pt'>󰂯 </span>{device_alias}",
+        "format": "",
+        "tooltip": false
+    },
+
+    "tray": {
+        "icon-size": 18,
+        "spacing": 8,
+        "show-passive-items": false
+    },
+
+    "clock": {
+        "timezone": "Asia/Kolkata",
+        "tooltip": false,
+        "interval": 60,
+        "format": "{:%I:%M %p}",
+        "format-alt": "{:%d %B %Y %I:%M %p}",
+        "max-length": 25,
+    },
+
+    "cpu": {
+        "interval": 1,
+        "format": "{usage}% <span size='large'></span> ",
+        "on-click": "alacritty --class system_monitor -e htop"
+    },
+    "memory": {
+        "interval": 1,
+        "format": "{used:0.1f}GB <span size='large'> </span>",
+        "on-click": "alacritty --class system_monitor -e htop",
+    },
+
+    "backlight": {
+        "format": "{percent}% {icon}",
+        "on-scroll-down": "brightnessctl s 5%+",
+        "on-scroll-up": "brightnessctl s 5%-",
+        "format-icons": ["󰃚", "󰃚", "󰃛", "󰃜", "󰃜", "󰃝", "󰃞", "󰃟", "󰃠"]
+    },
+    "battery": {
+        "states": {
+            "warning": 50,
+            "critical": 20
+        },
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% 󰂅",
+        "format-plugged": "{capacity}% {icon}",
+         "format-good": "", // An empty format will hide the module
+         "format-full": "󰁹",
+        "format-icons": ["󰂎","󰁺","󰁻","󰁼","󰁽","󰁾","󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    },
+    "pulseaudio": {
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-bluetooth-muted": " muted",
+        "format-muted": "muted 󰖁",
+        "format-icons": {
+            "headphone": "󰋋",
+            "hands-free": "",
+            "headset": "󰋋",
+            "phone": "󰄜",
+            "portable": "",
+            "car": "󰸛",
+            "default": ["󰕿", "󰖀", "󰕾"]
+        },
+        "on-click-right": "pavucontrol",
+      "on-click": "/home/clevrf0x/.config/hypr/scripts/volume toggle_mute",
+      "on-scroll-down": "/home/clevrf0x/.config/hypr/scripts/volume up",
+      "on-scroll-up": "/home/clevrf0x/.config/hypr/scripts/volume down",
+    },
+    "network": {
+         "interface": "wlan0",
+        "format-wifi":  " {signalStrength}% 󰤨 ",
+        "format-disconnected": " Offline 󰤭 ",
+        "tooltip-format": "{ifname} via {gwaddr} 󰱶",
+        "tooltip-format-wifi": "{essid}",
+    }
+}

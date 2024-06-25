@@ -14,6 +14,15 @@
 - nvim
 - hyprland
 - wofi
+- rofi
+- dunst
+- hyprpaper
+- waybar
+- swaylock
+- wlogout
+- swaylock
+- swayidle
+- greenclip
 
 ### How to setup?
 
