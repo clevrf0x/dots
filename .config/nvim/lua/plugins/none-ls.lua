@@ -53,10 +53,10 @@ return {
         null_ls.builtins.formatting.goimports,
         null_ls.builtins.formatting.golines,
         null_ls.builtins.formatting.prettierd,
-        null_ls.builtins.formatting.stylelint,
+        -- null_ls.builtins.formatting.stylelint,
         null_ls.builtins.formatting.yamlfmt,
 
-        null_ls.builtins.completion.spell,
+        -- null_ls.builtins.completion.spell,
         null_ls.builtins.completion.luasnip,
         null_ls.builtins.completion.tags,
 
@@ -68,7 +68,7 @@ return {
         null_ls.builtins.diagnostics.mypy,
         null_ls.builtins.diagnostics.pylint,
         null_ls.builtins.diagnostics.staticcheck,
-        null_ls.builtins.diagnostics.stylelint,
+        -- null_ls.builtins.diagnostics.stylelint,
         null_ls.builtins.diagnostics.yamllint,
         require("none-ls.diagnostics.eslint_d"),
       },
