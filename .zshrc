@@ -62,6 +62,7 @@ export PATH="$HOME/bin:$PATH"
 ## Alias
 alias c='clear'
 alias cf='clear && pfetch'
+alias hx='helix'
 
 alias ls='eza'
 alias l='eza -l'
