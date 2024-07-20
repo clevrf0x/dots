@@ -77,7 +77,7 @@ alias grep='rg'
 eval "$(fzf --zsh)"
 
 # Load oh my posh prompt
-eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh/gruvbox.json)"
+eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh/manhattan.json)"
 
 ## Auto run scripts
 # Colorscripts
