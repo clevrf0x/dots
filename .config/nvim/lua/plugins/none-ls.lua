@@ -1,13 +1,14 @@
 return {
   "jay-babu/mason-null-ls.nvim",
   event = { "BufReadPre", "BufNewFile" },
+  lazy = false,
   dependencies = {
     "williamboman/mason.nvim",
     "nvimtools/none-ls.nvim",
     "nvimtools/none-ls-extras.nvim",
   },
   config = function()
-    require("mason-null-ls").setup({
+    require("mason-null-ls").setup {
       ensure_installed = {
         "stylua",
         "jq",
@@ -33,10 +34,10 @@ return {
         "prettierd",
         "yamlfmt",
       },
-    })
+    }
 
-    local null_ls = require("null-ls")
-    null_ls.setup({
+    local null_ls = require "null-ls"
+    null_ls.setup {
       sources = {
         null_ls.builtins.code_actions.gitsigns,
         null_ls.builtins.code_actions.gomodifytags,
@@ -56,8 +57,6 @@ return {
         -- null_ls.builtins.formatting.stylelint,
         null_ls.builtins.formatting.yamlfmt,
 
-        -- null_ls.builtins.completion.spell,
-        null_ls.builtins.completion.luasnip,
         null_ls.builtins.completion.tags,
 
         null_ls.builtins.diagnostics.actionlint,
@@ -70,8 +69,8 @@ return {
         null_ls.builtins.diagnostics.staticcheck,
         -- null_ls.builtins.diagnostics.stylelint,
         null_ls.builtins.diagnostics.yamllint,
-        require("none-ls.diagnostics.eslint_d"),
+        require "none-ls.diagnostics.eslint_d",
       },
-    })
+    }
   end,
 }

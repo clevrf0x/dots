@@ -1,10 +1,11 @@
 return {
   "nvim-treesitter/nvim-treesitter",
   build = ":TSUpdate",
+  lazy = false,
   config = function()
-    local configs = require("nvim-treesitter.configs")
+    local configs = require "nvim-treesitter.configs"
 
-    configs.setup({
+    configs.setup {
       ensure_installed = { "lua", "vim", "vimdoc" },
       sync_install = false,
       auto_install = true, -- Automatically install parsers for new languages
@@ -20,6 +21,6 @@ return {
         end,
       },
       indent = { enable = true },
-    })
-  end
+    }
+  end,
 }
